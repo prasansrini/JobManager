@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.job.manager.app.viewmodel.JobViewModel"/>
+        <variable name="adapter1" type="com.job.manager.app.view.adapter.JobAdapter"/>
+        <variable name="adapter2" type="com.job.manager.app.view.adapter.JobAdapter"/>
+        <variable name="adapter3" type="com.job.manager.app.view.adapter.JobAdapter"/>
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        tools:context=".view.activities.MainActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/colorPrimary"
+            android:drawableBottom="@drawable/border"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="@string/app_header"
+            android:textColor="#000000"
+            android:textSize="24sp"/>
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_margin="12dp"
+              android:background="#000000"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.mVariation1}"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.4dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            android:background="#000000"/>
+
+                    </LinearLayout>
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/defined_height"
+                        android:adapter="@{adapter1}"
+                        android:padding="12dp"
+                        android:scrollbars="vertical"
+                        app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.mVariation2}"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.4dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            android:background="#000000"/>
+
+                    </LinearLayout>
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/defined_height"
+                        android:adapter="@{adapter2}"
+                        android:padding="12dp"
+                        android:scrollbars="vertical"
+                        app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.mVariation3}"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.4dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            android:background="#000000"/>
+
+                    </LinearLayout>
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/defined_height"
+                        android:adapter="@{adapter3}"
+                        android:padding="12dp"
+                        android:scrollbars="vertical"
+                        app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:background="#000000"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>
